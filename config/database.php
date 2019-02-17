@@ -1,9 +1,9 @@
 <?php
 
-$dbopts = parse_url(getenv('DATABASE_URL'));
+$url = parse_url(getenv('DATABASE_URL'));
 $host = $url["host"] ?? null;
 $username = $url["user"] ?? null;
-$passwork = $url["pass"] ?? null;
+$password = $url["pass"] ?? null;
 $database = substr($url["path"], 1) ?? null;
 
 return [
