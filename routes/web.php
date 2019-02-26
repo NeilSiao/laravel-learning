@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', function () {
   
         return view('pages.index')->with('title', 'Home');

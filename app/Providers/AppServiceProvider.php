@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\URL;
+use Barryvdh\Debugbar\Facade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
             });
     }
         Schema::defaultStringLength(191);
+
+        if(config('app.env') ==='production'){
+            \URL::forceScheme('https');
+        }
     }
 
     /**
@@ -39,6 +45,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    
+        if($this->app->environment() == 'local'){
+            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
+        }
     }
 }

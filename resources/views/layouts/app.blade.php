@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css', true) }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id='app'>
@@ -27,7 +27,7 @@
             @yield('content')
         </div>
     </div>
-    <script src="{{ asset('js/app.js', true) }}" ></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
     <script  src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script >
         CKEDITOR.replace( 'article-ckeditor' );

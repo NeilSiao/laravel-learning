@@ -16,7 +16,7 @@ return [
     */
 
     //'default' => env('DB_CONNECTION', 'mysql'),
-    'default' => env('DB_CONNECTION', 'pgsql_production'),
+    'default' => env('DB_CONNECTION', 'mysql'),
     
     /*
     |--------------------------------------------------------------------------
@@ -61,11 +61,11 @@ return [
 
         'pgsql_production' => [
             'driver' => 'pgsql',
-            'host' => $url["host"],
-            'port' => $url["port"],
-            'database' => ltrim($url["path"], "/"),
-            'username' => $url["user"],
-            'password' => $url["pass"],
+            'host' => $url["host"] ?? null,
+            'port' => $url["port"] ?? null,
+            'database' => ltrim($url["path"], "/") ?? null,
+            'username' => $url["user"] ?? null,
+            'password' => $url["pass"] ?? null,
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

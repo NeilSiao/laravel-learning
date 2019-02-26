@@ -29,6 +29,7 @@ class PostsController extends Controller
     public function index()
     {
         //
+       
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         //$posts = DB::select('select * from posts');
         //return $post =post::where('title', 'Post One')->get();
